@@ -1,0 +1,47 @@
+<div id="<%= dom_id project %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Name:</strong>
+    <%= project.name %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Category:</strong>
+    <%= project.category %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Website:</strong>
+    <%= project.website %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Discord:</strong>
+    <%= project.discord %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Twitter:</strong>
+    <%= project.twitter %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Github:</strong>
+    <%= project.github %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Logo:</strong>
+    <%= link_to project.logo.filename, project.logo if project.logo.attached? %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Background image:</strong>
+    <%= link_to project.background_image.filename, project.background_image if project.background_image.attached? %>
+  </p>
+
+  <% if action_name != "show" %>
+    <%= link_to "Show this project", project, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to 'Edit this project', edit_project_path(project), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr class="mt-6">
+  <% end %>
+</div>
