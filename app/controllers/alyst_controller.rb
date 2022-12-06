@@ -1,0 +1,2 @@
+class AlystController < ApplicationController
+end
