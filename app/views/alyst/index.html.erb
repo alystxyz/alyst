@@ -1,3 +1,22 @@
-<% @projects.each do |project| %>
-  <%= render "project_card", project: project %>
-<% end %>
+<div class="h-96" style="background: linear-gradient(90deg, #4ba260 0%, #1A4525 100%)">
+  <div>
+    <h1 class="text-white text-7xl">Canto Portal</h1>
+    <h3 class="text-white text-xl">Your gateway into the Canto ecosystem</h3>
+  </div>
+  <div class="flex justify-center">
+    <button data-action="click->filter#filterCard" data-value="defi" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mx-1">Defi</button>
+    <button data-action="click->filter#filterCard" data-value="ecosystem" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mx-1">Ecosystem</button>
+    <button data-action="click->filter#filterCard" data-value="nft" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mx-1">NFT</button>
+    <button data-action="click->filter#filterCard" data-value="newthings" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mx-1">New Things</button>
+  </div>
+</div>
+
+<div class="container mx-auto">
+  <div class="grid lg:grid-cols-4 md:grid-cols-2 place-items-center -mt-40">
+    <% @projects.each do |project| %>
+      <%= render "project_card", project: project %>
+    <% end %>
+  </div>
+</div>
+
+<%# style="background: linear-gradient(90deg, #4ba260 0%, #1A4525 100%)" %>

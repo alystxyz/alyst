@@ -1,4 +1,4 @@
-<div class="max-w-xs flex flex-col w-60 h-96 min-h-300 rounded-lg border-solid border-4 overflow-hidden shadow-lg divide-y">  
+<div class="max-w-xs flex flex-col mx-4 w-auto h-96 min-h-300 mb-10 rounded-lg border-solid border-4 overflow-hidden shadow-lg divide-y <%= project.category.gsub(" ", "").downcase %>" data-filter-target="projectCard">  
   <div 
     class="px-6 py-4 min-h-[40%] bg-cover"
     style="background-image: url(<%=  url_for(Rails.application.routes.url_helpers.polymorphic_url(project.background_image)) %>); background-position: center">
@@ -6,24 +6,29 @@
       <%= image_tag 'live1.svg', class: "rounded-full shadow-lg h-auto align-left" %>
     </span>
   </div>
-  <div class="min-h-max flex-auto">
+  <div class="min-h-max flex-auto bg-white">
     <div>
       <%= image_tag project&.logo, alt: "logo", class: "max-w-[50%] mx-auto -mt-12 rounded-full shadow-lg h-auto align-middle" %>
+      <div class="text-center relative -mt-4">
+        <a href="<%= project&.website %>" target="_blank">
+          <%= image_tag "client_pic_icon_hover.svg", class: "mx-auto" %>
+        </a>
+      </div>
     </div>
     <div class="px-6 pt-4 pb-2 text-center">
-      <p><%= project.name %></p>
+      <p><%= project&.name %></p>
     </div>
     <div class="px-6 pt-4 pb-2 text-center">
-      <p><%= project.category %></p>
+      <p><%= project&.category %></p>
     </div>
     <div class="pt-4 pb-2 text-center">
-      <a href="<%= project.discord %>" target="_blank">
+      <a href="<%= project&.discord %>" class="mx-4" target="_blank">
           <i class="fa-brands fa-discord text-2xl"></i>
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;
-      <a href="<%= project.twitter %>" class="mr-4 inline-block" target="_blank">
+      </a>
+      <a href="<%= project&.twitter %>" class="mx-4 inline-block" target="_blank">
         <i class="fa-brands fa-twitter text-2xl"></i>
-      </a>&nbsp;&nbsp;&nbsp;&nbsp;
-      <a href="<%= project.github %>" class="mx-4 inline-block" target="_blank">
+      </a>
+      <a href="<%= project&.github %>" class="inline-block mx-4" target="_blank">
         <i class="fa-brands fa-github text-2xl"></i>
       </a>
     </div>
