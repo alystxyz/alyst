@@ -2,19 +2,32 @@ import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
   static targets = [ "projectCard" ]
-  static lastFilterUsed = ""
+  static values = {
+    showCard: Array
+  }
 
   filterCard(event) {
-    this.projectCardTargets.forEach((element, index) => {
-      if (this.lastFilterUsed === event.target.dataset.value) {
-          element.classList.remove("hidden")
-      } else if (!element.className.includes(event.target.dataset.value)) {
-        element.classList.add("hidden")
-      }
 
+    if (this.showCardValue.length === 0) {
+      this.showCardValue = [event.target.dataset.value]
+    } else if (this.showCardValue.includes(event.target.dataset.value)) {
+      this.showCardValue = this.showCardValue.filter(category => category !== event.target.dataset.value)
+    } else {
+      this.showCardValue = [...this.showCardValue, event.target.dataset.value]
+    }
+
+    this.projectCardTargets.forEach((element, index) => {
+      if (this.showCardValue.length === 0) {
+        element.classList.remove("hidden")
+      } else {
+        if (this.showCardValue.filter(cardValue => element.classList.contains(cardValue)).length === 0) {
+          element.classList.add("hidden")
+        } else {
+          element.classList.remove("hidden")
+        }
+      }
     })
-    this.lastFilterUsed = this.lastFilterUsed === event.target.dataset.value ? "" : event.target.dataset.value;
+
+ 
   }
 }
-
-
