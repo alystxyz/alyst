@@ -10,9 +10,15 @@ export default class extends Controller {
 
     if (this.showCardValue.length === 0) {
       this.showCardValue = [event.target.dataset.value]
+      event.target.classList.add("bg-green-200")
+      event.target.classList.remove("bg-transparent")
     } else if (this.showCardValue.includes(event.target.dataset.value)) {
+      event.target.classList.remove("bg-green-200")
+      event.target.classList.add("bg-transparent")
       this.showCardValue = this.showCardValue.filter(category => category !== event.target.dataset.value)
     } else {
+      event.target.classList.add("bg-green-200")
+      event.target.classList.remove("bg-transparent")
       this.showCardValue = [...this.showCardValue, event.target.dataset.value]
     }
 
