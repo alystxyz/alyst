@@ -6,44 +6,47 @@ pin "@hotwired/stimulus", to: "stimulus.min.js", preload: true
 pin "@hotwired/stimulus-loading", to: "stimulus-loading.js", preload: true
 pin_all_from "app/javascript/controllers", under: "controllers"
 pin "@fortawesome/fontawesome-free", to: "https://ga.jspm.io/npm:@fortawesome/fontawesome-free@6.2.1/js/all.js"
-pin "ethers" # @5.7.2
-pin "@ethersproject/abi", to: "@ethersproject--abi.js" # @5.7.0
-pin "@ethersproject/abstract-provider", to: "@ethersproject--abstract-provider.js" # @5.7.0
-pin "@ethersproject/abstract-signer", to: "@ethersproject--abstract-signer.js" # @5.7.0
-pin "@ethersproject/address", to: "@ethersproject--address.js" # @5.7.0
-pin "@ethersproject/base64", to: "@ethersproject--base64.js" # @5.7.0
-pin "@ethersproject/basex", to: "@ethersproject--basex.js" # @5.7.0
-pin "@ethersproject/bignumber", to: "@ethersproject--bignumber.js" # @5.7.0
-pin "@ethersproject/bytes", to: "@ethersproject--bytes.js" # @5.7.0
-pin "@ethersproject/constants", to: "@ethersproject--constants.js" # @5.7.0
-pin "@ethersproject/contracts", to: "@ethersproject--contracts.js" # @5.7.0
-pin "@ethersproject/hash", to: "@ethersproject--hash.js" # @5.7.0
-pin "@ethersproject/hdnode", to: "@ethersproject--hdnode.js" # @5.7.0
-pin "@ethersproject/json-wallets", to: "@ethersproject--json-wallets.js" # @5.7.0
-pin "@ethersproject/keccak256", to: "@ethersproject--keccak256.js" # @5.7.0
-pin "@ethersproject/logger", to: "@ethersproject--logger.js" # @5.7.0
-pin "@ethersproject/networks", to: "@ethersproject--networks.js" # @5.7.1
-pin "@ethersproject/pbkdf2", to: "@ethersproject--pbkdf2.js" # @5.7.0
-pin "@ethersproject/properties", to: "@ethersproject--properties.js" # @5.7.0
-pin "@ethersproject/providers", to: "@ethersproject--providers.js" # @5.7.2
-pin "@ethersproject/random", to: "@ethersproject--random.js" # @5.7.0
-pin "@ethersproject/rlp", to: "@ethersproject--rlp.js" # @5.7.0
-pin "@ethersproject/sha2", to: "@ethersproject--sha2.js" # @5.7.0
-pin "@ethersproject/signing-key", to: "@ethersproject--signing-key.js" # @5.7.0
-pin "@ethersproject/solidity", to: "@ethersproject--solidity.js" # @5.7.0
-pin "@ethersproject/strings", to: "@ethersproject--strings.js" # @5.7.0
-pin "@ethersproject/transactions", to: "@ethersproject--transactions.js" # @5.7.0
-pin "@ethersproject/units", to: "@ethersproject--units.js" # @5.7.0
-pin "@ethersproject/wallet", to: "@ethersproject--wallet.js" # @5.7.0
-pin "@ethersproject/web", to: "@ethersproject--web.js" # @5.7.1
-pin "@ethersproject/wordlists", to: "@ethersproject--wordlists.js" # @5.7.0
-pin "aes-js" # @3.0.0
-pin "bech32" # @1.1.4
-pin "bn.js" # @5.2.1
-pin "buffer" # @2.0.0
-pin "hash.js" # @1.1.7
-pin "inherits" # @2.0.4
-pin "js-sha3" # @0.8.0
-pin "minimalistic-assert" # @1.0.1
-pin "process" # @2.0.0
-pin "scrypt-js" # @3.0.1
+pin "ethers", to: "https://ga.jspm.io/npm:ethers@5.7.2/lib.esm/index.js"
+pin "@ethersproject/abi", to: "https://ga.jspm.io/npm:@ethersproject/abi@5.7.0/lib.esm/index.js"
+pin "@ethersproject/abstract-provider", to: "https://ga.jspm.io/npm:@ethersproject/abstract-provider@5.7.0/lib.esm/index.js"
+pin "@ethersproject/abstract-signer", to: "https://ga.jspm.io/npm:@ethersproject/abstract-signer@5.7.0/lib.esm/index.js"
+pin "@ethersproject/address", to: "https://ga.jspm.io/npm:@ethersproject/address@5.7.0/lib.esm/index.js"
+pin "@ethersproject/base64", to: "https://ga.jspm.io/npm:@ethersproject/base64@5.7.0/lib.esm/index.js"
+pin "@ethersproject/basex", to: "https://ga.jspm.io/npm:@ethersproject/basex@5.7.0/lib.esm/index.js"
+pin "@ethersproject/bignumber", to: "https://ga.jspm.io/npm:@ethersproject/bignumber@5.7.0/lib.esm/index.js"
+pin "@ethersproject/bytes", to: "https://ga.jspm.io/npm:@ethersproject/bytes@5.7.0/lib.esm/index.js"
+pin "@ethersproject/constants", to: "https://ga.jspm.io/npm:@ethersproject/constants@5.7.0/lib.esm/index.js"
+pin "@ethersproject/contracts", to: "https://ga.jspm.io/npm:@ethersproject/contracts@5.7.0/lib.esm/index.js"
+pin "@ethersproject/hash", to: "https://ga.jspm.io/npm:@ethersproject/hash@5.7.0/lib.esm/index.js"
+pin "@ethersproject/hdnode", to: "https://ga.jspm.io/npm:@ethersproject/hdnode@5.7.0/lib.esm/index.js"
+pin "@ethersproject/json-wallets", to: "https://ga.jspm.io/npm:@ethersproject/json-wallets@5.7.0/lib.esm/index.js"
+pin "@ethersproject/keccak256", to: "https://ga.jspm.io/npm:@ethersproject/keccak256@5.7.0/lib/index.js"
+pin "@ethersproject/logger", to: "https://ga.jspm.io/npm:@ethersproject/logger@5.7.0/lib.esm/index.js"
+pin "@ethersproject/networks", to: "https://ga.jspm.io/npm:@ethersproject/networks@5.7.1/lib.esm/index.js"
+pin "@ethersproject/pbkdf2", to: "https://ga.jspm.io/npm:@ethersproject/pbkdf2@5.7.0/lib.esm/index.js"
+pin "@ethersproject/properties", to: "https://ga.jspm.io/npm:@ethersproject/properties@5.7.0/lib.esm/index.js"
+pin "@ethersproject/providers", to: "https://ga.jspm.io/npm:@ethersproject/providers@5.7.2/lib.esm/index.js"
+pin "@ethersproject/random", to: "https://ga.jspm.io/npm:@ethersproject/random@5.7.0/lib.esm/index.js"
+pin "@ethersproject/rlp", to: "https://ga.jspm.io/npm:@ethersproject/rlp@5.7.0/lib.esm/index.js"
+pin "@ethersproject/sha2", to: "https://ga.jspm.io/npm:@ethersproject/sha2@5.7.0/lib.esm/index.js"
+pin "@ethersproject/signing-key", to: "https://ga.jspm.io/npm:@ethersproject/signing-key@5.7.0/lib.esm/index.js"
+pin "@ethersproject/solidity", to: "https://ga.jspm.io/npm:@ethersproject/solidity@5.7.0/lib.esm/index.js"
+pin "@ethersproject/strings", to: "https://ga.jspm.io/npm:@ethersproject/strings@5.7.0/lib.esm/index.js"
+pin "@ethersproject/transactions", to: "https://ga.jspm.io/npm:@ethersproject/transactions@5.7.0/lib.esm/index.js"
+pin "@ethersproject/units", to: "https://ga.jspm.io/npm:@ethersproject/units@5.7.0/lib.esm/index.js"
+pin "@ethersproject/wallet", to: "https://ga.jspm.io/npm:@ethersproject/wallet@5.7.0/lib.esm/index.js"
+pin "@ethersproject/web", to: "https://ga.jspm.io/npm:@ethersproject/web@5.7.1/lib.esm/index.js"
+pin "@ethersproject/wordlists", to: "https://ga.jspm.io/npm:@ethersproject/wordlists@5.7.0/lib.esm/index.js"
+pin "aes-js", to: "https://ga.jspm.io/npm:aes-js@3.0.0/index.js"
+pin "bech32", to: "https://ga.jspm.io/npm:bech32@1.1.4/index.js"
+pin "bn.js", to: "https://ga.jspm.io/npm:bn.js@5.2.1/lib/bn.js"
+pin "buffer", to: "https://ga.jspm.io/npm:@jspm/core@2.0.0-beta.27/nodelibs/browser/buffer.js"
+pin "hash.js", to: "https://ga.jspm.io/npm:hash.js@1.1.7/lib/hash.js"
+pin "inherits", to: "https://ga.jspm.io/npm:inherits@2.0.4/inherits_browser.js"
+pin "js-sha3", to: "https://ga.jspm.io/npm:js-sha3@0.8.0/src/sha3.js"
+pin "minimalistic-assert", to: "https://ga.jspm.io/npm:minimalistic-assert@1.0.1/index.js"
+pin "process", to: "https://ga.jspm.io/npm:@jspm/core@2.0.0-beta.27/nodelibs/browser/process-production.js"
+pin "scrypt-js", to: "https://ga.jspm.io/npm:scrypt-js@3.0.1/scrypt.js"
+pin "node-fs", to: "https://ga.jspm.io/npm:node-fs@0.1.7/lib/fs.js"
+pin "fs", to: "https://ga.jspm.io/npm:@jspm/core@2.0.0-beta.27/nodelibs/browser/fs.js"
+pin "path", to: "https://ga.jspm.io/npm:@jspm/core@2.0.0-beta.27/nodelibs/browser/path.js"

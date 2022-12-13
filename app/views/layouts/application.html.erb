@@ -11,7 +11,7 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
+  <body data-controller="ethers" class="min-h-screen">
     <nav>
       <div class="container mx-auto px-6 py-2 flex justify-between items-center">
         <a class="font-bold text-2xl lg:text-4xl" href="#">
@@ -28,8 +28,9 @@
         <div class="hidden lg:block">
           <ul class="inline-flex">
             <li><a class="px-4 font-bold" href="/">Home</a></li>
-            <li><a class="px-4 hover:text-gray-800" href="#">About</a></li>
-            <li><a class="px-4 hover:text-gray-800" href="#">Contact</a></li>
+            <li><%= link_to "Catalyst", catalysts_path %></li>
+            <li><a data-action="click->ethers#connectWallet" class="px-4 hover:text-gray-800" href="#">Connect</a></li>
+            <li><p class="showAccount hidden" data-ethers-target="etherState">Account:</p></li>
           </ul>
         </div>
       </div>
@@ -37,7 +38,7 @@
     <main data-controller="filter">
       <%= yield %>
     </main>
-    <footer class="bg-gray-100">
+    <footer class="bg-gray-100 sticky top-[100vh]">
       <div class="container mx-auto px-6 pt-10 pb-6">
         <div class="flex flex-wrap">
           <div class="w-full md:w-1/4 text-center md:text-left">

@@ -1,0 +1,19 @@
+<div class="my-5">
+  <label for="name" class="my-5">Name</label>
+  <input type="text" id="name" name="name" class="block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" data-ethers-target="name">
+</div>
+
+<div class="my-5">
+  <label for="target_amount" class="my-5">Target Amount</label>
+  <input type="number" name="target_amount" class="block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" data-ethers-target="targetAmount" />
+</div>
+
+<div class="my-5">
+  <label for="period_of_time" class="my-5">Period of Time</label>
+  <input type="datetime-local" name="period_of_time" id="period_of_time" class="block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" data-ethers-target="periodOfTime"  />
+</div>
+
+<div class="inline">
+  <button data-action="click->ethers#createCampaign" data-value="newthings" class="bg-transparent border hover:bg-green-200 text-black font-bold py-2 px-4 rounded-full mx-1">Create Campaign</button>
+</div>
+
