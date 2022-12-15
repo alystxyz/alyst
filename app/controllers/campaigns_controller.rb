@@ -21,7 +21,7 @@ class CampaignsController < ApplicationController
 
   # POST /campaigns or /campaigns.json
   def create
-    @campaign = Campaign.new(campaign_params)
+    @campaign = Campaign.new(name: params[:name], target_amount: params[:target_amount], period_of_time: params[:period_of_time], contract_address: params[:contract_address])
 
     respond_to do |format|
       if @campaign.save
