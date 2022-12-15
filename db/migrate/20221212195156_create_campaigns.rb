@@ -4,6 +4,7 @@ class CreateCampaigns < ActiveRecord::Migration[7.0]
       t.string :name
       t.integer :target_amount
       t.datetime :period_of_time
+      t.string :contract_address
 
       t.timestamps
     end

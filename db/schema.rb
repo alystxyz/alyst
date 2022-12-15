@@ -46,6 +46,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_12_195156) do
     t.string "name"
     t.integer "target_amount"
     t.datetime "period_of_time"
+    t.string "contract_address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
