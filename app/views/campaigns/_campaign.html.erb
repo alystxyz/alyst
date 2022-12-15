@@ -1,0 +1,22 @@
+<div id="<%= dom_id campaign %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Name:</strong>
+    <%= campaign.name %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Target amount:</strong>
+    <%= campaign.target_amount %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Period of time:</strong>
+    <%= campaign.period_of_time %>
+  </p>
+
+  <% if action_name != "show" %>
+    <%= link_to "Show this campaign", catalyst_path(campaign), class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to 'Edit this campaign', edit_catalyst_path(campaign), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr class="mt-6">
+  <% end %>
+</div>

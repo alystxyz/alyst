@@ -7,6 +7,7 @@ class CreateProjects < ActiveRecord::Migration[7.0]
       t.text :discord
       t.text :twitter
       t.text :github
+      t.boolean :active, default: false
 
       t.timestamps
     end

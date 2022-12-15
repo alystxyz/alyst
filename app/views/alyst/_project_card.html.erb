@@ -1,7 +1,7 @@
 <div class="max-w-xs flex flex-col mx-4 w-auto h-96 min-h-300 mb-10 rounded-lg border-solid border-4 overflow-hidden shadow-lg divide-y <%= project.category.gsub(" ", "").downcase %>" data-filter-target="projectCard">  
   <div 
     class="px-6 py-4 min-h-[40%] bg-cover"
-    style="background-image: url(<%=  url_for(Rails.application.routes.url_helpers.polymorphic_url(project.background_image)) %>); background-position: center">
+    style="background-image: url(<%=  url_for(Rails.application.routes.url_helpers.polymorphic_url(project&.background_image)) %>); background-position: center">
     <span>
       <%= image_tag 'live1.svg', class: "rounded-full shadow-lg h-auto align-left" %>
     </span>
