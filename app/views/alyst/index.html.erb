@@ -1,26 +1,2 @@
-<div class="h-96" style="background: linear-gradient(90deg, #4ba260 0%, #1A4525 100%)">
-  <div class="items-center flex">
-    <h1 class="text-white text-7xl mx-auto" style="font-family: 'Perpetua Titling MT', sans-serif;">Canto Portal</h1>
-    <%# <h3 class="text-white text-xl ">Your gateway into the Canto ecosystem</h3> %>
-  </div>
-  <div class="items-center flex">
-    <%# <h1 class="text-white text-7xl mx-auto">Canto Portal</h1> %>
-    <h3 class="text-white text-xl mx-auto" style="font-family: 'Perpetua Titling MT', sans-serif;">Your gateway into the Canto ecosystem</h3>
-  </div>
-  <div class="flex justify-center mt-12">
-    <button data-action="click->filter#filterCard" data-value="defi" class="bg-transparent border hover:bg-green-200 text-white font-bold py-2 px-4 rounded-full mx-1" style="font-family: 'Perpetua Titling MT', sans-serif;">Defi</button>
-    <button data-action="click->filter#filterCard" data-value="ecosystem" class="bg-transparent border hover:bg-green-200 text-white font-bold py-2 px-4 rounded-full mx-1" style="font-family: 'Perpetua Titling MT', sans-serif;">Ecosystem</button>
-    <button data-action="click->filter#filterCard" data-value="nft" class="bg-transparent border hover:bg-green-200 text-white font-bold py-2 px-4 rounded-full mx-1" style="font-family: 'Perpetua Titling MT', sans-serif;">NFT</button>
-    <button data-action="click->filter#filterCard" data-value="newthings" class="bg-transparent border hover:bg-green-200 text-white font-bold py-2 px-4 rounded-full mx-1" style="font-family: 'Perpetua Titling MT', sans-serif;">New Things</button>
-  </div>
+<div class="bg-[url('hack-bg.svg')] w-full h-screen bg-center bg-cover bg-dunes">
 </div>
-
-<div class="container mx-auto">
-  <div class="grid lg:grid-cols-4 md:grid-cols-2 place-items-center -mt-40">
-    <% @projects.each do |project| %>
-      <%= render "project_card", project: project %>
-    <% end %>
-  </div>
-</div>
-
-<%# style="background: linear-gradient(90deg, #4ba260 0%, #1A4525 100%)" %>
