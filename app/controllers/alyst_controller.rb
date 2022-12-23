@@ -2,6 +2,6 @@ class AlystController < ApplicationController
   include ActiveStorage::SetCurrent
 
   def index
-    @projects = Project.all
+    @projects = Project.where(active: true)
   end
 end
