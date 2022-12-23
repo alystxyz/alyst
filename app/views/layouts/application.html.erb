@@ -18,13 +18,17 @@
           <%= image_tag("AlystSVG2.svg", :alt => "Alyst") %>
         </a>
         <div class="block md:hidden">
-          <button class="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-gray-800 hover:border-teal-500 appearance-none focus:outline-none">
+          <ul class="inline-flex">
+            <li class="text-white text-right"  style="font-family: 'Perpetua Titling MT', sans-serif;"><%= link_to "Add Project", new_project_path, class: "px-4" %></li>
+          </ul>
+          <%# <button class="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-gray-800 hover:border-teal-500 appearance-none focus:outline-none">
             <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
               <title>Canto</title>
               <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
             </svg>
-          </button>
+          </button> %>
         </div>
+
         <div class="hidden md:block">
           <ul class="inline-flex">
             <% if user_signed_in? %>
@@ -73,3 +77,4 @@
     </footer>
   </body>
 </html>
+
