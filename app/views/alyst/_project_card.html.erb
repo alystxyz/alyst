@@ -22,15 +22,23 @@
       <p><%= project&.category %></p>
     </div>
     <div class="pt-4 pb-2 lg:pb-0 sm:pb-0 text-center">
-      <a href="<%= project&.discord %>" class="mx-4" target="_blank">
+      <% if project&.discord != "" %>
+          <a href="<%= project&.discord %>" class="mx-4" target="_blank">
           <i class="fa-brands fa-discord text-2xl"></i>
-      </a>
-      <a href="<%= project&.twitter %>" class="mx-4 inline-block" target="_blank">
-        <i class="fa-brands fa-twitter text-2xl"></i>
-      </a>
-      <a href="<%= project&.github %>" class="inline-block mx-4" target="_blank">
-        <i class="fa-brands fa-github text-2xl"></i>
-      </a>
+        </a>
+      <% end %>
+
+      <% if project&.twitter != "" %>
+        <a href="<%= project&.twitter %>" class="mx-4 inline-block" target="_blank">
+          <i class="fa-brands fa-twitter text-2xl"></i>
+        </a>
+      <% end %>
+
+      <% if project&.github != "" %>
+        <a href="<%= project&.github %>" class="inline-block mx-4" target="_blank">
+          <i class="fa-brands fa-github text-2xl"></i>
+        </a>
+      <% end %>
     </div>
   </div>
 </div>
