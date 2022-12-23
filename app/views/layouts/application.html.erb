@@ -14,7 +14,7 @@
   <body data-controller="ethers" class="min-h-screen">
     <nav style="background: linear-gradient(90deg, #4ba260 0%, #1A4525 100%)">
       <div class="container mx-auto px-6 py-2 flex justify-between items-center">
-        <a class="w-48" href="#">
+        <a class="w-48" href="/">
           <%= image_tag("AlystSVG2.svg", :alt => "Alyst") %>
         </a>
         <div class="block lg:hidden">
@@ -27,16 +27,22 @@
         </div>
         <div class="hidden lg:block">
           <ul class="inline-flex">
-            <li class="text-white"  style="font-family: 'Perpetua Titling MT', sans-serif;"><a class="px-4 font-bold" href="/" >Home</a></li>
-            <li class="text-white"  style="font-family: 'Perpetua Titling MT', sans-serif;"><%= link_to "Add your project", new_project_path, class: "px-4" %></li>
-            <li class="text-white"  style="font-family: 'Perpetua Titling MT', sans-serif;"><%= link_to "Catalyst", catalysts_path, class: "px-4" %></li>
-            <li class="text-white"  style="font-family: 'Perpetua Titling MT', sans-serif;"><a data-action="click->ethers#connectWallet" data-ethers-target="etherState" class="px-4 hover:text-gray-800" href="#">Connect</a></li>
-            <li class="text-white"  style="font-family: 'Perpetua Titling MT', sans-serif;"><p class="showAccount hidden" data-ethers-target="etherState"></p></li>
+            <% if user_signed_in? %>
+              <li class="text-white"  style="font-family: 'Perpetua Titling MT', sans-serif;"><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+            <% end %>
+
+            <li class="text-white"  style="font-family: 'Perpetua Titling MT', sans-serif;"><a class="px-4" href="https://evm.explorer.canto.io/" target="_blank">Canto Explorer</a></li>
+            <li class="text-white"  style="font-family: 'Perpetua Titling MT', sans-serif;"><%= link_to "Apply To Join PanAlyst", new_project_path, class: "px-4" %></li>
+            <li class="text-white"  style="font-family: 'Perpetua Titling MT', sans-serif;"><a class="px-4" href="https://canto.io/bridge" target="_blank">Canto Bridge</a></li>
+            <%# <li class="text-white"  style="font-family: 'Perpetua Titling MT', sans-serif;"><a data-action="click->ethers#connectWallet" data-ethers-target="etherState" class="px-4 hover:text-gray-800" href="#">Connect</a></li>
+            <li class="text-white"  style="font-family: 'Perpetua Titling MT', sans-serif;"><p class="showAccount hidden" data-ethers-target="etherState"></p></li> %>
           </ul>
         </div>
       </div>
     </nav>
     <main data-controller="filter">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
       <%= yield %>
     </main>
     <footer class="bg-gray-100 sticky top-[100vh]" style="background: linear-gradient(90deg, #4ba260 0%, #1A4525 100%)">

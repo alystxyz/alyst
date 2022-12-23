@@ -1,5 +1,6 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: %i[ show edit update destroy ]
+  before_action :is_admin?, only: %i[ edit show index update destroy ]
 
   # GET /projects or /projects.json
   def index
@@ -66,5 +67,9 @@ class ProjectsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def project_params
       params.require(:project).permit(:name, :category, :website, :discord, :twitter, :github, :logo, :background_image)
+    end
+
+    def is_admin?
+      redirect_to root_path unless current_user && current_user.admin? 
     end
 end
