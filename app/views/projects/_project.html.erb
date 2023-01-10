@@ -11,22 +11,22 @@
 
   <p class="my-5">
     <strong class="block font-medium mb-1">Website:</strong>
-    <%= project.website %>
+    <%= project.website != "" ? project.website : "NA" %>
   </p>
 
   <p class="my-5">
     <strong class="block font-medium mb-1">Discord:</strong>
-    <%= project.discord %>
+    <%= project.discord != "" ? project.discord : "NA" %>
   </p>
 
   <p class="my-5">
     <strong class="block font-medium mb-1">Twitter:</strong>
-    <%= project.twitter %>
+    <%= project.twitter != "" ? project.twitter : "NA" %>
   </p>
 
   <p class="my-5">
     <strong class="block font-medium mb-1">Github:</strong>
-    <%= project.github %>
+    <%= project.github || "NA" %>
   </p>
 
   <p class="my-5">

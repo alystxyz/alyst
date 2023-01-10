@@ -53,7 +53,7 @@ export default class extends Controller {
       Rails.ajax({
         type: "post",
         url: "/catalysts",
-        data: new URLSearchParams({ name: this.nameTarget.value, target_amount: this.targetAmountTarget.value, period_of_time: this.periodOfTimeTarget.value, contract_address: contract.address }),
+        data: new URLSearchParams({ name: this.nameTarget.value, target_amount: this.targetAmountTarget.value, period_of_time: this.periodOfTimeTarget.value, contract_address: contract?.address }),
         success: function(response) {
           console.log(response, 'SUCCESS resoonse')
           // Add a redirect to the campaign show page
@@ -68,7 +68,6 @@ export default class extends Controller {
       console.log("FAILED")
     }
 
-    // this.
   }
 
   async pledgeToCampaign(event) {

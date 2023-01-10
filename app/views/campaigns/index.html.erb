@@ -1,14 +1,23 @@
-<div class="w-full">
+<div class="h-96 container mx-auto p-5">
   <% if notice.present? %>
     <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
   <% end %>
 
-  <div class="flex justify-between items-center">
-    <h1 class="font-bold text-4xl">Campaigns</h1>
-    <%= link_to 'New campaign', new_catalyst_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
+  <div class="flex items-center">
+    <h1 class="font-bold text-4xl mx-auto">Catalysts on Alyst</h1>
+    <%= link_to 'New campaign', new_catalyst_path, class: "rounded-lg py-3 px-5 bg-blue-600 mx-auto text-white block font-medium" %>
   </div>
 
-  <div id="campaigns" class="min-w-full">
+  <div class="flex items-center">
+    <p>
+      The Juicebox protocol is open to anyone, and project configurations can vary widely.
+      There are risks associated with interacting with all projects on the protocol. 
+      Projects built on the protocol are not endorsed or vetted by JuiceboxDAO or Peel.
+      Do your own research and understand the risks before committing your funds.
+    </p>
+  </div>
+
+  <div id="campaigns" class="min-w-full flex">
     <%= render @campaigns %>
   </div>
 </div>

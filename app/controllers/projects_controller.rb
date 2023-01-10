@@ -4,7 +4,8 @@ class ProjectsController < ApplicationController
 
   # GET /projects or /projects.json
   def index
-    @projects = Project.all
+    @projects = Project.where(active: true)
+    @pending_projects = Project.where(active: false)
   end
 
   # GET /projects/1 or /projects/1.json
@@ -66,7 +67,7 @@ class ProjectsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def project_params
-      params.require(:project).permit(:name, :category, :website, :discord, :twitter, :github, :logo, :background_image)
+      params.require(:project).permit(:name, :category, :website, :discord, :twitter, :github, :logo, :background_image, :active)
     end
 
     def is_admin?
