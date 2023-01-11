@@ -65,9 +65,14 @@ class ProjectsController < ApplicationController
       @project = Project.find(params[:id])
     end
 
+    
     # Only allow a list of trusted parameters through.
     def project_params
-      params.require(:project).permit(:name, :category, :website, :discord, :twitter, :github, :logo, :background_image, :active)
+      if current_user&.admin?
+        params.require(:project).permit(:name, :category, :website, :discord, :twitter, :github, :logo, :background_image, :active)
+      else
+        params.require(:project).permit(:name, :category, :website, :discord, :twitter, :github, :logo, :background_image)
+      end
     end
 
     def is_admin?
