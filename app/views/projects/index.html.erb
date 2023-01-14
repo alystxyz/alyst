@@ -1,14 +1,29 @@
 <div class="w-full">
-  <% if notice.present? %>
-    <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+  <% if user_signed_in? %> 
+    <% if notice.present? %>
+      <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+    <% end %>
+
+  <% if @pending_projects.count > 0 %>
+    <div class="flex justify-between items-center">
+      <h1 class="font-bold text-4xl">Pending Projects</h1>
+      <%#= link_to 'New project', new_project_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
+    </div>
+
+    <div id="projects" class="grid grid-cols-3 gap-3">
+      <%= render @pending_projects %>
+    </div>
   <% end %>
 
   <div class="flex justify-between items-center">
     <h1 class="font-bold text-4xl">Projects</h1>
-    <%= link_to 'New project', new_project_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
+    <%#= link_to 'New project', new_project_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
   </div>
 
-  <div id="projects" class="min-w-full">
+  <div id="projects" class="grid grid-cols-3 gap-3">
     <%= render @projects %>
   </div>
+  <% else %>
+    <%= button_to "Sign in", new_user_session_path %> 
+  <% end %>
 </div>

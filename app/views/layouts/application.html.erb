@@ -14,29 +14,39 @@
   <body data-controller="ethers" class="min-h-screen">
     <nav style="background: linear-gradient(90deg, #4ba260 0%, #1A4525 100%)">
       <div class="container mx-auto px-6 py-2 flex justify-between items-center">
-        <a class="w-48" href="#">
+        <a class="w-48" href="/">
           <%= image_tag("AlystSVG2.svg", :alt => "Alyst") %>
         </a>
-        <div class="block lg:hidden">
-          <button class="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-gray-800 hover:border-teal-500 appearance-none focus:outline-none">
+        <div class="block md:hidden">
+          <ul class="inline-flex">
+            <li class="text-white text-right"  style="font-family: 'Perpetua Titling MT', sans-serif;"><%= link_to "Add Project", new_project_path, class: "px-4" %></li>
+          </ul>
+          <%# <button class="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-gray-800 hover:border-teal-500 appearance-none focus:outline-none">
             <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-              <title>Menu</title>
+              <title>Canto</title>
               <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
             </svg>
-          </button>
+          </button> %>
         </div>
-        <div class="hidden lg:block">
+
+        <div class="hidden md:block">
           <ul class="inline-flex">
-            <li class="text-white"  style="font-family: 'Perpetua Titling MT', sans-serif;"><a class="px-4 font-bold" href="/" >Home</a></li>
-            <li class="text-white"  style="font-family: 'Perpetua Titling MT', sans-serif;"><%= link_to "Add your project", new_project_path, class: "px-4" %></li>
-            <li class="text-white"  style="font-family: 'Perpetua Titling MT', sans-serif;"><%= link_to "Catalyst", catalysts_path, class: "px-4" %></li>
-            <li class="text-white"  style="font-family: 'Perpetua Titling MT', sans-serif;"><a data-action="click->ethers#connectWallet" data-ethers-target="etherState" class="px-4 hover:text-gray-800" href="#">Connect</a></li>
-            <li class="text-white"  style="font-family: 'Perpetua Titling MT', sans-serif;"><p class="showAccount hidden" data-ethers-target="etherState"></p></li>
+            <% if user_signed_in? %>
+              <li class="text-white"  style="font-family: 'Perpetua Titling MT', sans-serif;"><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+            <% end %>
+
+            <li class="text-white"  style="font-family: 'Perpetua Titling MT', sans-serif;"><a class="px-4" href="https://evm.explorer.canto.io/" target="_blank">Canto Explorer</a></li>
+            <li class="text-white"  style="font-family: 'Perpetua Titling MT', sans-serif;"><%= link_to "Apply To Join PanAlyst", new_project_path, class: "px-4" %></li>
+            <li class="text-white"  style="font-family: 'Perpetua Titling MT', sans-serif;"><a class="px-4" href="https://canto.io/bridge" target="_blank">Canto Bridge</a></li>
+            <%# <li class="text-white"  style="font-family: 'Perpetua Titling MT', sans-serif;"><a data-action="click->ethers#connectWallet" data-ethers-target="etherState" class="px-4 hover:text-gray-800" href="#">Connect</a></li>
+            <li class="text-white"  style="font-family: 'Perpetua Titling MT', sans-serif;"><p class="showAccount hidden" data-ethers-target="etherState"></p></li> %>
           </ul>
         </div>
       </div>
     </nav>
     <main data-controller="filter">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
       <%= yield %>
     </main>
     <footer class="bg-gray-100 sticky top-[100vh]" style="background: linear-gradient(90deg, #4ba260 0%, #1A4525 100%)">
@@ -67,3 +77,4 @@
     </footer>
   </body>
 </html>
+

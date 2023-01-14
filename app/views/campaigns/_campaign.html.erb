@@ -1,22 +1,24 @@
-<div id="<%= dom_id campaign %>">
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Name:</strong>
-    <%= campaign.name %>
-  </p>
+<%= link_to catalyst_path(campaign) do %>
+  <div id="<%= dom_id campaign %>" class="border border-solid w-1/2 py-6 px-5 flex flex-row">
+    <div class="h-28 w-28 flex items-center justify-center">
+      <%= image_tag 'cantocrabs-logo.jpeg', class: "shadow-lg h-auto align-left max-h-full max-w-full object-cover object-center" %>
+    </div>
+    <div class="flex flex-col max-w-[50%]">
+      <div class="ml-5">
+        <h2 class="m-0 overflow-hidden overflow-ellipsis text-xl leading-8 text-black dark:text-slate-100">Crypto Underworld Podcast Bootstrap<%#= campaign.name %></h2>
+      </div>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Target amount:</strong>
-    <%= campaign.target_amount %>
-  </p>
+      <div class="ml-5">
+        <span>$<%= campaign.target_amount %></span>
+        <span class="text-gray-500 dark:text-gray-300"> since <%= campaign.period_of_time.strftime('%Y-%m-%d')  %></span>
+      </div>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Period of time:</strong>
-    <%= campaign.period_of_time %>
-  </p>
-
-  <% if action_name != "show" %>
-    <%= link_to "Show this campaign", catalyst_path(campaign), class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <%= link_to 'Edit this campaign', edit_catalyst_path(campaign), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
-    <hr class="mt-6">
-  <% end %>
-</div>
+      <div class="ml-5 max-h-5 overflow-hidden overflow-ellipsis text-grey-400 dark:text-slate-200">
+        <%#= campaign.description %>
+        Crypto Underworld Podcast comes from the AFA/LCD discussions breaking down the scams we find and investigating how they work and who are behind them.
+        We think there is a massive disservice to the crypto community and new users to not have an easy place to listen in for "buyer beware" verbose as well as coverage on crypto fundamentals, self-regulation, and everything in-between.
+        No shilling projects, no covering the price of BTC day to day, just pure talk and a few guests here and
+      </div>
+    </div>
+  </div>
+<% end %>
